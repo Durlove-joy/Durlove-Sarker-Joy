@@ -15,6 +15,18 @@ closeMenu.addEventListener('click', () => {
     menuToggle.classList.remove('open');
 });
 
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    const isClickInsideMenu = mobileNav.contains(e.target);
+    const isClickOnMenuToggle = menuToggle.contains(e.target);
+    
+    // If menu is open and click is outside menu and not on menu toggle
+    if (mobileNav.classList.contains('open') && !isClickInsideMenu && !isClickOnMenuToggle) {
+        mobileNav.classList.remove('open');
+        menuToggle.classList.remove('open');
+    }
+});
+
 // Header text change on scroll
 const welcomeText = document.querySelector('.welcome-text');
 let isScrolled = false;
@@ -41,54 +53,6 @@ window.addEventListener('scroll', () => {
             welcomeText.classList.remove('scrolled');
         }, 200);
     }
-});
-
-// Dynamic Pulse Rate System - Much slower heartbeat line
-const pulseContainer = document.querySelector('.pulse-container');
-const heartbeatPath = document.querySelector('.heartbeat-path');
-
-let startTime = Date.now();
-let currentBPM = 30; // Starting much slower BPM
-const maxBPM = 50; // Maximum BPM (very slow)
-const accelerationTime = 120000; // 120 seconds to reach max BPM (very slow progression)
-
-function updatePulseRate() {
-    const elapsed = Date.now() - startTime;
-    const progress = Math.min(elapsed / accelerationTime, 1);
-    
-    // Calculate current BPM with very gradual acceleration
-    currentBPM = 30 + (maxBPM - 30) * Math.pow(progress, 0.5);
-    
-    // Convert BPM to animation duration in milliseconds (much slower baseline)
-    const animationDuration = (60 / currentBPM) * 3000; // Tripled duration for much slower effect
-    
-    // Update heartbeat line animation
-    if (heartbeatPath) {
-        heartbeatPath.style.animationDuration = animationDuration + 'ms';
-        
-        // Gradually increase line thickness and glow
-        const intensity = progress;
-        const strokeWidth = 4 + (intensity * 2); // From 4 to 6
-        heartbeatPath.style.strokeWidth = strokeWidth;
-        heartbeatPath.style.filter = `drop-shadow(0 0 ${8 + intensity * 6}px #ff4444)`;
-        
-        // Slightly intensify color
-        if (intensity > 0.5) {
-            heartbeatPath.style.stroke = intensity > 0.8 ? '#ff2222' : '#ff3333';
-        }
-    }
-    
-    // Update every 300ms for smooth transitions
-    if (progress < 1) {
-        setTimeout(updatePulseRate, 300);
-    }
-}
-
-// Start the pulse rate acceleration when page loads
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        updatePulseRate();
-    }, 1000); // Start after 1 second
 });
 
 navLinks.forEach(link => {
