@@ -885,12 +885,13 @@ html {
 
 .passion-tags h4 {
     font-size: 1.4rem;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .passion-tags h4::before {
@@ -1050,8 +1051,9 @@ html {
 
 .stat-label {
     font-size: 0.9rem;
-    color: #666;
+    color: #ffffff;
     font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .about-image {
