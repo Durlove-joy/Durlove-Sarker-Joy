@@ -892,13 +892,11 @@ html {
     line-height: 1.8;
     position: relative;
     z-index: 1;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
 }
 
 .about-card:hover p {
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    color: #64ffda;
 }
 
 .passion-tags {
