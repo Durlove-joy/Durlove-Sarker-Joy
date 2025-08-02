@@ -80,7 +80,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Typing animation for hero subtitle
 const typingText = document.querySelector('.typing-text');
-const words = ['Entrepreneur', 'Cybersecurity Professional', 'Peace Advocate', 'Technology Enthusiast', 'Digital Rights Activist'];
+const words = ['Entrepreneur', 'Cybersecurity Professional', 'Technology Enthusiast', 'Web Developer', 'Peacebuilder'];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
