@@ -1773,6 +1773,7 @@ html {
     gap: 1rem;
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 10;
 }
 
 .project-card:hover .project-overlay {
@@ -1792,6 +1793,8 @@ html {
     text-decoration: none;
     transition: transform 0.3s ease;
     border: 2px solid #64ffda;
+    position: relative;
+    z-index: 11;
 }
 
 .project-link:hover {
