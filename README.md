@@ -11,6 +11,7 @@ A modern, responsive portfolio website built with HTML, CSS, and JavaScript.
   - Smooth scrolling navigation
   - Hover effects and transitions
   - Mobile-friendly hamburger menu
+- **Classified Spotlight**: Dedicated Testanix showcase with direct links to <https://testanix.com/>
 - **Sections**:
   - Hero section with introduction
   - About section with personal information and stats
